@@ -210,6 +210,8 @@ func (f *Frontend) WindowHide() {
 
 func (f *Frontend) Show() {
 	f.mainWindow.Show()
+
+	f.mainWindow.Focus()
 }
 
 func (f *Frontend) Hide() {

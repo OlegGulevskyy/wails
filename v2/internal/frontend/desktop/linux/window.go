@@ -559,6 +559,13 @@ gboolean Hide(gpointer data) {
 	return G_SOURCE_REMOVE;
 }
 
+
+gboolean Focus(gpointer data) {
+	gtk_grab_add((GtkWidget*)data);
+
+	return G_SOURCE_REMOVE;
+}
+
 gboolean Maximise(gpointer data) {
 	gtk_window_maximize((GtkWindow*)data);
 
@@ -833,6 +840,10 @@ func (w *Window) Show() {
 
 func (w *Window) Hide() {
 	C.ExecuteOnMainThread(C.Hide, C.gpointer(w.asGTKWindow()))
+}
+
+func (w *Window) Focus() {
+	C.ExecuteOnMainThread(C.Focus, C.gpointer(w.asGTKWindow()))
 }
 
 func (w *Window) Maximise() {

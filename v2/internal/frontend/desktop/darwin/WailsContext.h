@@ -80,6 +80,7 @@
 - (void) ShowMouse;
 - (void) Hide;
 - (void) Show;
+- (void) Focus;
 - (void) HideApplication;
 - (void) ShowApplication;
 - (void) Quit;
